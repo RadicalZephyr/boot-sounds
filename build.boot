@@ -1,5 +1,5 @@
 (set-env!
- :resource-paths "sounds")
+ :resource-paths #{"sounds"})
 
 (def +version+ "1.0.0")
 
