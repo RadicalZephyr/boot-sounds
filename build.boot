@@ -7,7 +7,7 @@
 (def +version+ "1.0.0")
 
 (task-options!
- speak {:theme "radz_sounds"}
+ notify {:theme "radz_sounds"}
  push {:repo           "deploy"
        :ensure-branch  "master"
        :ensure-clean   true
@@ -28,4 +28,5 @@
 
 (deftask do-fail []
   (with-pre-wrap fileset
-    (fail "Failed build\n")))
+    (throw (ex-info "Failed build\n" {}))
+    fileset))
